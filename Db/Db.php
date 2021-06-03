@@ -11,7 +11,7 @@ class Db extends PDO
     private static $instance;
 
     //Informations de connexion
-    private const DBHOST = 'locahost';
+    private const DBHOST = 'localhost';
     private const DBUSER = 'root';
     private const DBPASS = '';
     private const DBNAME = 'demo_poo';
@@ -23,7 +23,7 @@ class Db extends PDO
 
         //On appelle le constucteur de la classe PDO
         try{
-            
+
             parent::__construct($_dsn, self::DBUSER, self::DBPASS);
 
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
@@ -34,6 +34,15 @@ class Db extends PDO
             die($e->getMessage());
         }
         
+    }
+
+    //Méthode pour instancier la fonction constructeur privé
+    public static function getInstance()
+    {
+        if(self::$instance === null){
+            self::$instance = new self();
+        }
+    return self::$instance;
     }
 }
 
