@@ -11,8 +11,6 @@ class UsersModel extends Model
     {
         $class = str_replace(__NAMESPACE__.'\\', '', __CLASS__);
         $this->table = strtolower(str_replace('Model', '', $class));
-        // $class = str_replace(__NAMESPACE__, '\\', '', __CLASS__);
-        // $this->table = strtolower(str_replace('Model','', $class));
     }
 
 

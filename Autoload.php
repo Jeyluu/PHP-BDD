@@ -18,7 +18,7 @@ namespace App;
 
             //On remplace les \ par des /
             $class = str_replace('\\', '/', $class); 
-            echo $class . "<br>";
+            // echo $class . "<br>";
 
             $fichier = __DIR__ . '/' . $class . '.php';
             //On vérifie si le fichier existe
