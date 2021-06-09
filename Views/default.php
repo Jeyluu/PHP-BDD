@@ -28,9 +28,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="annonces">Les annonces</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="users/login">Connexion</a>
-                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+
+                    <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="users/profil">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="users/logout">Déconnexion</a>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="users/register">Inscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="users/login">Connexion</a>
+                        </li>
+                    <?php endif; ?>
+
+
+
+
                 </ul>
             </div>
         </div>

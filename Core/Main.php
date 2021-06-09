@@ -10,6 +10,10 @@ class Main
 {
     public function start()
     {
+
+        //On demarre la session
+        session_start();
+        
         //On retire le "trailing slash" eventuel de l'URL
         //On recupère l'URL
         $uri = $_SERVER['REQUEST_URI'];
